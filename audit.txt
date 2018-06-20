@@ -1,0 +1,25 @@
+2018-05-26T12:03:47.909 : Item Id: 1 and Name: Snickers sold!!
+2018-05-27T13:38:54.611 : Item Id: 2 and Name: Potato Chips sold!!
+2018-05-27T14:06:28.893 : sellItem : ID: 4 | Name: cookies | Price: 1.00 | Stock: 12
+2018-05-27T17:04:03.829 : sellItem : ID: 5 | Name: chocolate croissant | Price: 2.5 | Stock: 16
+2018-05-27T17:46:04.321 : sellItem : ID: 8 | Name: Caesar Salad | Price: 5.00 | Stock: 1
+2018-05-27T19:49:15.351 : sellItem : ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T20:03:38.057 : sellItem : ID: 4 | Name: cookies | Price: 1.00 | Stock: 11
+2018-05-27T20:05:48.952 : sellItem : ID: 2 | Name: Potato Chips | Price: 1.50 | Stock: 17
+2018-05-27T20:38:36.770 : sellItem : ID: 5 | Name: chocolate croissant | Price: 2.5 | Stock: 15
+2018-05-27T20:42:57.733 : EXCEPTION:itemStockCheck: com.ke.vendingmachine.dao.VendingMachinePersistenceException: We're out of stock for this item, please enter another item ID. ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T20:43:02.645 : sellItem : ID: 5 | Name: chocolate croissant | Price: 2.5 | Stock: 14
+2018-05-27T20:51:49.753 : EXCEPTION:itemStockCheck: com.ke.vendingmachine.dao.VendingMachinePersistenceException: We're out of stock for this item, please enter another item ID. ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T20:52:04.099 : sellItem : ID: 7 | Name: grilled sandwich | Price: 2.50 | Stock: 42
+2018-05-27T21:23:42.777 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.1
+2018-05-27T21:23:42.781 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.12.50
+2018-05-27T21:39:12.312 : EXCEPTION:itemStockCheck: com.ke.vendingmachine.dao.VendingMachinePersistenceException: We're out of stock for this item, please enter another item ID. ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T21:39:14.922 : sellItem : ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T21:39:45.220 : EXCEPTION:itemStockCheck: com.ke.vendingmachine.dao.VendingMachinePersistenceException: We're out of stock for this item, please enter another item ID. ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-27T21:39:51.652 : sellItem : ID: 4 | Name: cookies | Price: 1.00 | Stock: 10
+2018-05-27T21:40:10.413 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.3
+2018-05-27T21:40:10.413 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.35.00
+2018-05-29T10:52:30.315 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.1
+2018-05-29T10:52:30.331 : EXCEPTION:getChange: com.ke.vendingmachine.service.WrongDollarAmountException: Insufficient funds.12.50
+2018-05-29T10:53:06.690 : EXCEPTION:itemStockCheck: com.ke.vendingmachine.dao.VendingMachinePersistenceException: We're out of stock for this item, please enter another item ID. ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0
+2018-05-29T10:53:15.486 : sellItem : ID: 3 | Name: Coffee Beans | Price: 5 | Stock: 0

@@ -1,0 +1,14 @@
+com\ke\vendingmachine\dao\VendingMachinePersistenceException.class
+com\ke\vendingmachine\service\VendingMachineServiceImpl.class
+com\ke\vendingmachine\service\WrongItemIDException.class
+com\ke\vendingmachine\ui\VendingMachineView.class
+com\ke\vendingmachine\service\WrongDollarAmountException.class
+com\ke\vendingmachine\dao\VendingMachineDao.class
+com\ke\vendingmachine\dao\VendingMachineDaoStub.class
+com\ke\vendingmachine\App.class
+com\ke\vendingmachine\controller\VendingMachineController.class
+com\ke\vendingmachine\ui\UserIO.class
+com\ke\vendingmachine\ui\UserIOConsoleImpl.class
+com\ke\vendingmachine\dao\VendingMachineDaoFileImpl.class
+com\ke\vendingmachine\service\VendingMachineServiceLayer.class
+com\ke\vendingmachine\dto\Item.class

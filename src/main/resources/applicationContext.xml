@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <!-- Bean definitions go here -->
+   
+    <bean id="userIO" class="com.ke.vendingmachine.ui.UserIOConsoleImpl"/>
+   
+    <bean id="view" class="com.ke.vendingmachine.ui.VendingMachineView">
+        <constructor-arg ref="userIO"/>
+    </bean>
+   
+    <bean id="vendingMachineDao" 
+          class="com.ke.vendingmachine.dao.VendingMachineDaoFileImpl"/>
+   
+    <bean id="auditDao" 
+          class="com.ke.vendingmachine.dao.VendingMachineAuditDaoFileImpl"/>
+   
+    <bean id="serviceLayer" 
+          class="com.ke.vendingmachine.service.VendingMachineServiceImpl">
+        <constructor-arg ref="vendingMachineDao"/>
+        <constructor-arg ref="auditDao"/>           
+    </bean>
+   
+    <bean id="controller" 
+          class="com.ke.vendingmachine.controller.VendingMachineController">
+        <constructor-arg ref="serviceLayer"/>
+        <constructor-arg ref="view"/>
+    </bean>
+    
+    <bean id="loggingAdvice" class="com.ke.vendingmachine.advice.LoggingAdvice">
+        <constructor-arg ref="auditDao"/>
+    </bean>
+    
+    <aop:config>
+        <aop:aspect ref="loggingAdvice">
+            <aop:after-returning
+                method="createAuditEntry"
+                pointcut="execution(* com.ke.vendingmachine.service.VendingMachineServiceLayer.sellItem(..))"
+            />
+        
+    
+         
+        <aop:after-throwing 
+            method="afterThrowingStuff"
+            pointcut="execution(* com.ke.vendingmachine.service.VendingMachineServiceLayer.*(..))"
+            throwing = "ex"
+        />
+        <aop:after-throwing 
+            method="afterThrowingStuff2"
+            pointcut="execution(* com.ke.vendingmachine.service.VendingMachineServiceLayer.*(..))"
+            throwing = "ex1"
+        />
+        </aop:aspect>
+    </aop:config>
+</beans>
